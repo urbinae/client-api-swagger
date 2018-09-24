@@ -21,8 +21,13 @@ app.controller("demoCtrl",['$scope', '$http', function($scope, $http){
 		    method: 'get', 
 		    url: url
 		}).then(function (response) {
-		    console.log(response, 'res');
-		    data = response.data;
+		    console.log(response.data, 'res');
+		    if (response.status==200) {
+				alert("Hola Mundo");
+			} else {
+				alert("Algo anda mal");
+			}
+		    data = response.data.status;
 		},function (error){
 		    console.log(error, 'can not get data.');
 		});
