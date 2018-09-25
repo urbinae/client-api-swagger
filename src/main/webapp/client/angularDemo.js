@@ -15,10 +15,15 @@ app.controller("demoCtrl",['$scope', '$http', function($scope, $http){
 	
 	$scope.login = function(){
 		//console.log('email', $scope.email);
-		var url = 'https://httpbin.org/get';
+		data = {
+			email: $scope.email,
+			password: $scope.password
+		};
+		var url = 'https://localhost:8080/api/user/add/';
 		https://httpbin.org/get
 		$http({
-		    method: 'get', 
+		    method: 'post', 
+		    data: 
 		    url: url
 		}).then(function (response) {
 		    console.log(response.data, 'res');
